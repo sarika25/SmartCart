@@ -113,6 +113,8 @@ function Products() {
             className="w-full rounded-xl border bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-black"
           />
           <select
+            id="category-filter"
+            name="category"
             value={category}
             onChange={(e) => {
               setSearchParams({
@@ -138,6 +140,8 @@ function Products() {
             <option value="Health Care">Health Care</option>
           </select>
           <select
+            id="sort-products"
+            name="sort"
             value={sort}
             onChange={(e) => setSort(e.target.value)}
             className="mt-4 rounded-xl border bg-white px-4 py-3 outline-none"
