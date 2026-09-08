@@ -27,8 +27,6 @@ function Checkout() {
         method: "POST",
       });
 
-      console.log("ORDER CREATED:", order);
-
       // Clear frontend cart
       setCart({
         items: [],

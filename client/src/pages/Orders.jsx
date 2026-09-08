@@ -97,12 +97,6 @@ function Orders() {
                         src={item.image}
                         alt={item.name}
                         className="h-full w-full object-contain p-2"
-                        onError={(e) => {
-                          console.log("ORDER IMAGE FAILED:", item.image);
-                        }}
-                        onLoad={() => {
-                          console.log("ORDER IMAGE LOADED:", item.image);
-                        }}
                       />
                     </div>
 

@@ -139,8 +139,6 @@ const recommendProducts = async (req, res) => {
       previousRequirements,
     );
 
-    console.log("Raw AI Result:", result);
-
     let requirements;
 
     try {
@@ -152,8 +150,6 @@ const recommendProducts = async (req, res) => {
         message: "AI returned an invalid response",
       });
     }
-
-    console.log("AI Requirements:", requirements);
 
     // =====================================================
     // MERGE PREVIOUS + CURRENT REQUIREMENTS
@@ -196,8 +192,6 @@ const recommendProducts = async (req, res) => {
 
       nextQuestion: null,
     };
-
-    console.log("MERGED REQUIREMENTS:", requirements);
 
     // =====================================================
     // CHECK REQUIRED INFORMATION
@@ -252,8 +246,6 @@ const recommendProducts = async (req, res) => {
     if (requirements.department) {
       const requestedDepartment = normalize(requirements.department);
 
-      console.log("REQUESTED DEPARTMENT:", requestedDepartment);
-
       filteredProducts = filteredProducts.filter((product) => {
         const productDepartment = normalize(product.category);
 
@@ -262,30 +254,8 @@ const recommendProducts = async (req, res) => {
           (productDepartment.includes(requestedDepartment) ||
             requestedDepartment.includes(productDepartment));
 
-        if (
-          product.name?.toLowerCase().includes("face") ||
-          product.name?.toLowerCase().includes("mamaearth")
-        ) {
-          console.log("DEPARTMENT DEBUG:", {
-            originalName: product.name,
-            originalCategory: product.category,
-            normalizedCategory: productDepartment,
-            requestedDepartment,
-            matches,
-          });
-        }
-
         return matches;
       });
-
-      console.log(
-        "AFTER DEPARTMENT FILTER:",
-        filteredProducts.map((product) => ({
-          name: product.name,
-          category: product.category,
-          price: product.price,
-        })),
-      );
     }
 
     // -----------------------------------------------
@@ -294,8 +264,6 @@ const recommendProducts = async (req, res) => {
 
     if (requirements.productType) {
       const requestedProductType = normalize(requirements.productType);
-
-      console.log("REQUESTED PRODUCT TYPE:", requestedProductType);
 
       filteredProducts = filteredProducts.filter((product) => {
         const productName = normalize(product.name);
@@ -323,16 +291,6 @@ const recommendProducts = async (req, res) => {
 
         return searchableText.includes(requestedProductType);
       });
-
-      console.log(
-        "AFTER PRODUCT TYPE FILTER:",
-        filteredProducts.map((product) => ({
-          name: product.name,
-          category: product.category,
-          type: product.type,
-          price: product.price,
-        })),
-      );
     }
 
     // =================================================
@@ -366,16 +324,6 @@ const recommendProducts = async (req, res) => {
         (product) => product.price <= maxBudget,
       );
     }
-
-    console.log(
-      "Products after strict filtering:",
-      filteredProducts.map((product) => ({
-        name: product.name,
-        category: product.category,
-        price: product.price,
-        type: product.type,
-      })),
-    );
 
     // =================================================
     // 7. NO PRODUCTS FOUND
@@ -541,20 +489,7 @@ const recommendProducts = async (req, res) => {
       .slice(0, 3);
 
     // =================================================
-    // 12. LOG FINAL RESULTS
-    // =================================================
-
-    console.log(
-      "FINAL RECOMMENDATIONS:",
-      recommendations.map((item) => ({
-        name: item.product.name,
-        price: item.product.price,
-        score: item.matchScore,
-      })),
-    );
-
-    // =================================================
-    // 13. RESPONSE
+    // 12. RESPONSE
     // =================================================
 
     return res.json({

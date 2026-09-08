@@ -80,8 +80,6 @@ function AIChatbot() {
         },
       ]);
     } catch (error) {
-      console.error("AI recommendation error:", error);
-
       setMessages((previousMessages) => [
         ...previousMessages,
         {
@@ -199,8 +197,6 @@ function AIChatbot() {
         },
       ]);
     } catch (error) {
-      console.error("AI chat error:", error);
-
       setMessages((previousMessages) => [
         ...previousMessages,
         {
@@ -427,14 +423,11 @@ function AIChatbot() {
 
                                       try {
                                         await addToCart(product._id);
-
-                                        alert("Product added to cart!");
                                       } catch (error) {
                                         console.error(
                                           "Add to cart error:",
                                           error,
                                         );
-                                        alert("Failed to add product to cart.");
                                       }
                                     }}
                                     className="rounded-lg bg-black px-2 py-2 text-xs font-medium text-white transition hover:bg-gray-800"

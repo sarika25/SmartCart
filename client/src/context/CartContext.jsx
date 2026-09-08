@@ -22,8 +22,6 @@ export function CartProvider({ children }) {
       try {
         const data = await apiRequest("/cart");
 
-        console.log("CART API RESPONSE:", data);
-
         setCart(data);
       } catch (error) {
         console.error("Failed to load cart:", error);

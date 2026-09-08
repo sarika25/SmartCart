@@ -64,12 +64,9 @@ function ProductDetails() {
 
         const data = await response.json();
 
-        console.log("Product details:", data);
-        console.log("Product image:", data.image);
-
         setProduct(data);
       } catch (error) {
-        console.error(error);
+        console.error("Failed to fetch product:", error);
       } finally {
         setLoading(false);
       }

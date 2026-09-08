@@ -68,7 +68,7 @@ function Products() {
         const data = await getProducts();
         setProducts(data);
       } catch (error) {
-        console.error(error);
+        console.error("Failed to load products:", error);
         setError("Unable to load products.");
       } finally {
         setLoading(false);

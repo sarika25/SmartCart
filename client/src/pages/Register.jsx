@@ -80,9 +80,7 @@ function Register() {
 
       const { confirmPassword, ...registerData } = form;
 
-      const data = await registerUser(registerData);
-
-      console.log("Registration successful:", data);
+      await registerUser(registerData);
 
       navigate("/login");
     } catch (error) {
