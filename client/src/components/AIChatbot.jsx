@@ -34,15 +34,18 @@ function AIChatbot() {
     try {
       const query = `I need ${preferences.product} under ${preferences.budget} for ${preferences.useCase}`;
 
-      const response = await fetch("http://localhost:5000/api/ai/recommend", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/ai/recommend`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            message: query,
+          }),
         },
-        body: JSON.stringify({
-          message: query,
-        }),
-      });
+      );
 
       const data = await response.json();
 
@@ -122,17 +125,20 @@ function AIChatbot() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/api/ai/recommend", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/ai/recommend`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            message: userText,
+            conversationHistory: updatedHistory,
+            previousRequirements: shoppingRequirements,
+          }),
         },
-        body: JSON.stringify({
-          message: userText,
-          conversationHistory: updatedHistory,
-          previousRequirements: shoppingRequirements,
-        }),
-      });
+      );
 
       const data = await response.json();
 
