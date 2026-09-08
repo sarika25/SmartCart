@@ -240,9 +240,9 @@ function Register() {
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-black text-sm"
                 >
                   {showPassword ? (
-                    <i class="ri-eye-off-fill"></i>
+                    <i className="ri-eye-off-fill"></i>
                   ) : (
-                    <i class="ri-eye-fill"></i>
+                    <i className="ri-eye-fill"></i>
                   )}
                 </button>
               </div>
@@ -265,9 +265,9 @@ function Register() {
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-black text-sm"
                 >
                   {showConfirmPassword ? (
-                    <i class="ri-eye-off-fill"></i>
+                    <i className="ri-eye-off-fill"></i>
                   ) : (
-                    <i class="ri-eye-fill"></i>
+                    <i className="ri-eye-fill"></i>
                   )}
                 </button>
               </div>

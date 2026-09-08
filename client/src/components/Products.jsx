@@ -104,6 +104,8 @@ function Products() {
         />
         <div className="mb-8 flex flex-col gap-4 md:flex-row">
           <input
+            id="product-search"
+            name="product-search"
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}

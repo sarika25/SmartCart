@@ -125,6 +125,8 @@ function Navbar() {
               className="flex items-center rounded-xl border bg-white px-4 py-2 focus-within:ring-1 focus-within:ring-black"
             >
               <input
+                id="desktop-search"
+                name="desktop-search"
                 type="text"
                 value={search}
                 onChange={(e) => {
@@ -284,6 +286,8 @@ function Navbar() {
             className="flex items-center rounded-xl border bg-white px-4 py-2 focus-within:ring-1 focus-within:ring-black"
           >
             <input
+              id="mobile-search"
+              name="mobile-search"
               type="text"
               value={search}
               onChange={(e) => {

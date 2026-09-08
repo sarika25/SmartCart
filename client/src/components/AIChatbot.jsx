@@ -477,6 +477,8 @@ function AIChatbot() {
           <div className="border-t bg-white p-3">
             <div className="flex items-center gap-2 rounded-xl border px-3">
               <input
+                id="ai-chat-message"
+                name="ai-chat-message"
                 type="text"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}

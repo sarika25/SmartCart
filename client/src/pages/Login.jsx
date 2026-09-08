@@ -167,9 +167,9 @@ function Login() {
                   aria-label={showPassword ? "Hide password" : "Show password"}
                 >
                   {showPassword ? (
-                    <i class="ri-eye-off-fill"></i>
+                    <i className="ri-eye-off-fill"></i>
                   ) : (
-                    <i class="ri-eye-fill"></i>
+                    <i className="ri-eye-fill"></i>
                   )}
                 </button>
               </div>
