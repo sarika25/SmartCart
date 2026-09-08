@@ -128,7 +128,7 @@ function Login() {
           <div className="w-full max-w-md mx-auto">
             <h2 className="text-2xl font-bold mb-1">Welcome Back</h2>
 
-            <p className="text-gray-500 text-sm mb-5">Login to ShopSense AI</p>
+            <p className="text-gray-500 text-sm mb-5">Login to SmartCart</p>
 
             {error && (
               <div className="bg-red-50 border border-red-200 text-red-600 rounded-lg px-3 py-2 mb-3 text-xs">

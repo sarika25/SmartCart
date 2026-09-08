@@ -23,7 +23,7 @@ const categories = [
   },
   {
     name: "Sports",
-    image: "/aaa.png",
+    image: "/sports.png",
   },
 ];
 

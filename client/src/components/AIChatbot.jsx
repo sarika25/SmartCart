@@ -259,7 +259,7 @@ function AIChatbot() {
           >
             <img
               src="/chatbot.gif"
-              alt="Open ShopSense AI"
+              alt="Open SmartCart AI"
               className="h-40 w-45 "
             />
 
@@ -374,7 +374,7 @@ function AIChatbot() {
                               <div className="p-3">
                                 <div className="mb-1 flex items-center justify-between gap-2">
                                   <span className="text-xs font-medium text-gray-500">
-                                    {product.brand || "ShopSense"}
+                                    {product.brand || "SmartCart"}
                                   </span>
 
                                   {recommendation.matchScore && (
