@@ -247,7 +247,7 @@ function AIChatbot() {
       {/* Floating Chat Button */}
 
       {!isOpen && (
-        <div className="fixed bottom-1 right-0 z-50 flex flex-col items-end gap-2">
+        <div className="fixed bottom-1 right-0 z-50 flex flex-col items-end gap-2 sm:bottom-2 sm:right-1 md:bottom-3 md:right-2">
           {/* Ask me bubble */}
           {/* <div className="animate-bounce rounded-2xl bg-black px-4 py-2 text-sm font-medium text-white shadow-lg">
             👋 Ask me!
@@ -256,17 +256,14 @@ function AIChatbot() {
           {/* Animated GIF button */}
           <button
             onClick={() => setIsOpen(true)}
-            className="group relative flex h-50 w-45 items-center justify-center "
+            className="group relative flex h-24 w-24 items-center justify-center sm:h-32 sm:w-32 md:h-40 md:w-40 lg:h-44 lg:w-44"
             aria-label="Open AI shopping assistant"
           >
             <img
               src="/chatbot.gif"
               alt="Open SmartCart AI"
-              className="h-40 w-45 "
+              className="h-22 w-22 object-contain sm:h-28 sm:w-28 md:h-36 md:w-36 lg:h-40 lg:w-40"
             />
-
-            {/* Online indicator */}
-            {/* <span className="absolute right-1 top-1 h-4 w-4 rounded-full border-2 border-white bg-green-500"></span> */}
           </button>
         </div>
       )}
